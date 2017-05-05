@@ -19,6 +19,9 @@
 static MLHudAlert *_staticHudAlert;
 
 + (void)alertWithWindow:(NSWindow *)aWindow type:(MLHudAlertType)type message:(NSString *)message {
+    
+    [_staticHudAlert.window removeChildWindow:aWindow];
+    
     if (!_staticHudAlert) {
         _staticHudAlert = [[self alloc] init];
     }
